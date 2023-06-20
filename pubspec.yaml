@@ -34,6 +34,9 @@ flutter:
         weight: 600
     - family: Jost
       fonts:
-      - asset: 
+      - asset: assets/fonts/Jost-500-Medium.ttf
+        weight: 500
+      - asset: assets/fonts/Jost-600-Semi.ttf
+        weight: 600
       
 
