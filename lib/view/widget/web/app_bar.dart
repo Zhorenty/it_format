@@ -69,7 +69,7 @@ class _PrimaryBar extends StatelessWidget {
           children: [
             Icon(Icons.phone, color: AppConstants.darkPrimary, size: 20),
             SizedBox(width: 5),
-            Text('8-(960)-456-78-90', style: AppConstants.text2),
+            Text('8-(960)-487-53-29', style: AppConstants.text2),
           ],
         ),
         const SizedBox(),

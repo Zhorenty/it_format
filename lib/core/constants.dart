@@ -41,6 +41,9 @@ class AppConstants {
   /// Dark color of primary color.
   static const Color darkPrimary = Color(0xFF32CD32);
 
+  ///
+  static const Color onPrimary = Colors.white;
+
   /// Secondary color of application.
   static const Color secondary = Color(0xFF032D3C);
 

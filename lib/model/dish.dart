@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-/// TODO: add docs
+/// TODO: docs
 class Dish {
   Dish({
     required this.image,
