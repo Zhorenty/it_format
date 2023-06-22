@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:it_format/view/widget/web/delivery_stack.dart';
+
+import '../widget/web/app_bar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -13,10 +16,9 @@ class HomeView extends StatelessWidget {
               SliverList(
                 delegate: SliverChildListDelegate(
                   [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [],
-                    ),
+                    const CustomAppBar(),
+                    const SizedBox(height: 50),
+                    const DeliveryStack(),
                   ],
                 ),
               ),
