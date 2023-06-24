@@ -51,8 +51,8 @@ class DishCard extends StatelessWidget {
               height: 70,
               width: 70,
               child: CircleAvatar(
-                child: Image.network(
-                  'https://verde-rest.ru/wp-content/uploads/2021/02/izobrazhenie_2021-02-19_034902.png',
+                child: Image.asset(
+                  'assets/images/primary_plate.png',
                 ),
               ),
             ),

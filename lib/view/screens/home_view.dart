@@ -17,9 +17,8 @@ class HomeView extends StatelessWidget {
                 delegate: SliverChildListDelegate(
                   [
                     const CustomAppBar(),
-                    const SizedBox(height: 180),
                     const DeliveryStack(),
-                    const SizedBox(height: 1000)
+                    const SizedBox(height: 1000),
                   ],
                 ),
               ),
