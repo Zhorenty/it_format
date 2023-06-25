@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:it_format/view/widget/web/categories.dart';
 import 'package:it_format/view/widget/web/delivery_stack.dart';
 
 import '../widget/web/app_bar.dart';
@@ -18,6 +19,8 @@ class HomeView extends StatelessWidget {
                   [
                     const CustomAppBar(),
                     const DeliveryStack(),
+                    const SizedBox(height: 120),
+                    const CategoriesWidget(),
                     const SizedBox(height: 1000),
                   ],
                 ),
