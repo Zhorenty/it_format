@@ -30,12 +30,28 @@ class CategoriesWidget extends StatelessWidget {
             const SizedBox(width: 100),
           ],
         ),
-        const SizedBox(height: 55),
-        const Row(
-          children: [
-            SizedBox(width: 135),
-            _CategoryStack(),
-          ],
+        SizedBox(
+          height: 225,
+          width: MediaQuery.sizeOf(context).width,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const [
+              SizedBox(width: 135),
+              _CategoryStack(category: 'Салаты', count: 20),
+              SizedBox(width: 25),
+              _CategoryStack(category: 'Салаты', count: 20),
+              SizedBox(width: 25),
+              _CategoryStack(category: 'Салаты', count: 20),
+              SizedBox(width: 25),
+              _CategoryStack(category: 'Салаты', count: 20),
+              SizedBox(width: 25),
+              _CategoryStack(category: 'Салаты', count: 20),
+              SizedBox(width: 25),
+              _CategoryStack(category: 'Салаты', count: 20),
+              SizedBox(width: 25),
+              _CategoryStack(category: 'Салаты', count: 20),
+            ],
+          ),
         ),
       ],
     );
@@ -43,44 +59,68 @@ class CategoriesWidget extends StatelessWidget {
 }
 
 class _CategoryStack extends StatelessWidget {
-  const _CategoryStack();
+  const _CategoryStack({
+    this.image = 'assets/images/primary_plate.png',
+    this.category = '',
+    this.count = 5,
+  });
+
+  final String? image;
+
+  final String category;
+
+  final int? count;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          width: 160,
-          height: 175,
-          decoration: const BoxDecoration(
-            color: Color(0xFFFEEFEA),
-            borderRadius: BorderRadius.all(Radius.circular(7)),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'Салаты',
-                style: AppConstants.text5.copyWith(
-                  decoration: TextDecoration.underline,
-                  fontSize: 15,
-                ),
+        Column(
+          children: [
+            const SizedBox(
+              width: 160,
+              height: 50,
+            ),
+            Container(
+              width: 160,
+              height: 175,
+              decoration: BoxDecoration(
+                color: Color(0xFFFEEFEA),
+                borderRadius: BorderRadius.all(Radius.circular(7)),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppConstants.darkPrimary.withOpacity(0.1),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  ),
+                ],
               ),
-              Text(
-                '20 элементов',
-                style: AppConstants.text1.copyWith(fontSize: 12),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    category,
+                    style: AppConstants.text5.copyWith(
+                      decoration: TextDecoration.underline,
+                      fontSize: 15,
+                    ),
+                  ),
+                  Text(
+                    '$count элементов',
+                    style: AppConstants.text1.copyWith(
+                      fontSize: 12,
+                      color: AppConstants.darkPrimary,
+                    ),
+                  ),
+                  const SizedBox(height: 37),
+                ],
               ),
-              const SizedBox(height: 37),
-            ],
-          ),
+            ),
+          ],
         ),
         Positioned(
-          left: 16,
-          child: Image.asset(
-            height: 114,
-            width: 114,
-            'assets/images/primary_plate.png',
-          ),
+          child: Image.asset(height: 170, width: 140, '$image'),
         ),
       ],
     );
