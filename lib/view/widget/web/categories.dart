@@ -85,7 +85,7 @@ class _CategoryStack extends StatelessWidget {
               width: 160,
               height: 175,
               decoration: BoxDecoration(
-                color: Color(0xFFFEEFEA),
+                color: const Color(0xFFFEEFEA),
                 borderRadius: BorderRadius.all(Radius.circular(7)),
                 boxShadow: [
                   BoxShadow(

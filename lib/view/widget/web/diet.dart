@@ -179,23 +179,25 @@ class DietWidget extends StatelessWidget {
                   ),
                   const SizedBox(width: 27),
                   TextButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          Text(
-                            'Подробнее',
-                            style: AppConstants.headlineSmall.copyWith(
-                                fontSize: 13.7,
-                                decoration: TextDecoration.underline),
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Text(
+                          'Подробнее',
+                          style: AppConstants.headlineSmall.copyWith(
+                            fontSize: 13.7,
+                            decoration: TextDecoration.underline,
                           ),
-                          const SizedBox(width: 10),
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            size: 12,
-                            color: AppConstants.darkPrimary,
-                          ),
-                        ],
-                      ))
+                        ),
+                        const SizedBox(width: 10),
+                        const Icon(
+                          Icons.arrow_forward_ios,
+                          size: 12,
+                          color: AppConstants.darkPrimary,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -263,7 +265,7 @@ class _CustomDropDownState extends State<_CustomDropDown> {
       height: 38,
       width: 175,
       decoration: BoxDecoration(
-        border: Border.all(color: AppConstants.darkPrimary),
+        border: Border.all(color: AppConstants.darkPrimary, width: 0.5),
         borderRadius: BorderRadius.circular(14),
         color: Colors.white,
       ),

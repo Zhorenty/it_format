@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:it_format/core/constants.dart';
-import 'package:it_format/view/widget/dish_card.dart';
+import 'package:it_format/view/widget/web/dish_card.dart';
 
 class DeliveryStack extends StatelessWidget {
   const DeliveryStack({super.key});
