@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:it_format/view/widget/web/categories.dart';
 import 'package:it_format/view/widget/web/delivery_stack.dart';
 import 'package:it_format/view/widget/web/new_products.dart';
+import 'package:it_format/view/widget/web/rations.dart';
 
 import '../widget/web/app_bar.dart';
 import '../widget/web/benefits.dart';
@@ -30,6 +31,8 @@ class HomeView extends StatelessWidget {
                     const DietWidget(),
                     const SizedBox(height: 55),
                     const NewProduct(),
+                    const SizedBox(height: 250),
+                    const RationsWidget(),
                     const SizedBox(height: 1000),
                   ],
                 ),
