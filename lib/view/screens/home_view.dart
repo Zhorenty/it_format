@@ -11,6 +11,8 @@ import 'package:it_format/view/widget/web/stock.dart';
 import '../widget/web/app_bar.dart';
 import '../widget/web/benefits.dart';
 import '../widget/web/diet.dart';
+import '../widget/web/news.dart';
+import '../widget/web/questions.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -45,7 +47,10 @@ class HomeView extends StatelessWidget {
                     const StockWidget(),
                     const SizedBox(height: 120),
                     const ShipPaymentWidget(),
-                    const SizedBox(height: 1000),
+                    const SizedBox(height: 60),
+                    const QuestionsWidget(),
+                    const SizedBox(height: 100),
+                    const NewsWidget(),
                   ],
                 ),
               ),
