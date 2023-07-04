@@ -4,6 +4,9 @@ import 'package:it_format/view/widget/web/delivery_stack.dart';
 import 'package:it_format/view/widget/web/how_to_order.dart';
 import 'package:it_format/view/widget/web/new_products.dart';
 import 'package:it_format/view/widget/web/rations.dart';
+import 'package:it_format/view/widget/web/reviews.dart';
+import 'package:it_format/view/widget/web/ship_payment.dart';
+import 'package:it_format/view/widget/web/stock.dart';
 
 import '../widget/web/app_bar.dart';
 import '../widget/web/benefits.dart';
@@ -36,6 +39,12 @@ class HomeView extends StatelessWidget {
                     const RationsWidget(),
                     const SizedBox(height: 240),
                     const HowToOrderWidget(),
+                    const SizedBox(height: 120),
+                    const ReviewsWidget(),
+                    const SizedBox(height: 200),
+                    const StockWidget(),
+                    const SizedBox(height: 120),
+                    const ShipPaymentWidget(),
                     const SizedBox(height: 1000),
                   ],
                 ),
