@@ -7,7 +7,7 @@ class AppConstants {
   /// TODO: add url images
   static List<Dish> dishes = [
     Dish(
-      image: '',
+      image: 'assets/images/popular1.png',
       name: 'Рис с овощами и рыбой',
       cal: 300,
       ingredients: 'Листья салата, пекинская капуста, яйцо, авакадо, помидоры',
@@ -15,7 +15,7 @@ class AppConstants {
       oldPrice: 500,
     ),
     Dish(
-      image: '',
+      image: 'assets/images/popular2.png',
       name: 'Салат с яйцом и фасолью',
       cal: 200,
       ingredients: 'Листья салата, морковь, яйцо, фасоль, тушеная капуста',
@@ -23,7 +23,7 @@ class AppConstants {
       oldPrice: 350,
     ),
     Dish(
-      image: '',
+      image: 'assets/images/popular3.png',
       name: 'Свежий летний салат',
       cal: 200,
       ingredients: 'Листья салата, пекинская капуста, яйцо, авакадо, орехи',

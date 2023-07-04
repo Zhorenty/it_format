@@ -30,37 +30,34 @@ class BenefitsWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 65),
-        SizedBox(
+        const SizedBox(
           height: 217,
-          width: MediaQuery.sizeOf(context).width,
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.sizeOf(context).width / 7,
-            ),
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const [
-                BenefitContainer(
-                  title: 'Лучшие продукты',
-                  subtitle: '100% натуральный состав и свежие продукты',
-                ),
-                SizedBox(width: 30),
-                BenefitContainer(
-                  title: 'Индивидуальный подход',
-                  subtitle: 'Подбор программы в соответствии с вашей целью',
-                ),
-                SizedBox(width: 30),
-                BenefitContainer(
-                  title: 'Быстрая доставка',
-                  subtitle: 'Каждый день в удобное для вас время',
-                ),
-                SizedBox(width: 30),
-                BenefitContainer(
-                  title: 'Забота об экологии',
-                  subtitle: 'Принимаем контайнеры на переработку',
-                ),
-              ],
-            ),
+          child: Wrap(
+            children: [
+              BenefitContainer(
+                asset: 'assets/icons/why1.png',
+                title: 'Лучшие продукты',
+                subtitle: '100% натуральный состав и свежие продукты',
+              ),
+              SizedBox(width: 30),
+              BenefitContainer(
+                asset: 'assets/icons/why2.png',
+                title: 'Индивидуальный подход',
+                subtitle: 'Подбор программы в соответствии с вашей целью',
+              ),
+              SizedBox(width: 30),
+              BenefitContainer(
+                asset: 'assets/icons/why3.png',
+                title: 'Быстрая доставка',
+                subtitle: 'Каждый день в удобное для вас время',
+              ),
+              SizedBox(width: 30),
+              BenefitContainer(
+                asset: 'assets/icons/why4.png',
+                title: 'Забота об экологии',
+                subtitle: 'Принимаем контайнеры на переработку',
+              ),
+            ],
           ),
         ),
       ],
@@ -71,12 +68,12 @@ class BenefitsWidget extends StatelessWidget {
 class BenefitContainer extends StatelessWidget {
   const BenefitContainer({
     super.key,
-    this.iconAsset = const Icon(Icons.shop),
+    this.asset = '',
     this.title = '',
     this.subtitle = '',
   });
 
-  final Icon iconAsset;
+  final String asset;
 
   final String title;
 
@@ -105,7 +102,7 @@ class BenefitContainer extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 27),
-          const Icon(Icons.shop, size: 50, color: AppConstants.darkPrimary),
+          Image.asset(asset),
           const SizedBox(height: 28),
           Text(
             title,

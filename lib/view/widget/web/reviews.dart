@@ -117,6 +117,7 @@ class ReviewsWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _CustomCard(
+                asset: 'assets/images/user1.png',
                 name: 'Виктория',
                 age: '25',
                 description:
@@ -124,6 +125,7 @@ class ReviewsWidget extends StatelessWidget {
               ),
               SizedBox(width: 30),
               _CustomCard(
+                asset: 'assets/images/user2.png',
                 height: 220,
                 name: 'Анна',
                 age: '35',
@@ -132,6 +134,7 @@ class ReviewsWidget extends StatelessWidget {
               ),
               SizedBox(width: 30),
               _CustomCard(
+                asset: 'assets/images/user3.png',
                 name: 'Полина',
                 age: '30',
                 description:
@@ -151,7 +154,10 @@ class _CustomCard extends StatelessWidget {
     this.name = '',
     this.age = '',
     this.description = '',
+    required this.asset,
   });
+
+  final String asset;
 
   final double? height;
 
@@ -183,11 +189,11 @@ class _CustomCard extends StatelessWidget {
         color: const Color(0xFFFAFFFA),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(25),
+        padding: const EdgeInsets.all(22),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CircleAvatar(radius: 30),
+            Image.asset(asset),
             const SizedBox(width: 12),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

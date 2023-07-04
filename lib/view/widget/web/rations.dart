@@ -42,14 +42,15 @@ class RationsWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RationCard(
+              asset: 'assets/images/ration1.png',
               headline: '1 000 ккал 3х-разовое',
-              inverted: false,
               label:
                   'Рацион состоит из 3 блюд на 850 ккал и суточной нормой всех витаминов. Предназначено для быстрого снижения веса.',
               price: '1 000',
             ),
             SizedBox(width: 30),
             RationCard(
+              asset: 'assets/images/ration2.png',
               headline: '2 000 ккал 4х-разовое',
               inverted: true,
               label:
@@ -58,8 +59,8 @@ class RationsWidget extends StatelessWidget {
             ),
             SizedBox(width: 30),
             RationCard(
+              asset: 'assets/images/ration3.png',
               headline: '1 200 ккал 3х-разовое',
-              inverted: false,
               label:
                   'Рацион состоит из 3 блюд на 850 ккал и суточной нормой всех витаминов. Предназначено для быстрого снижения веса.',
               price: '1 200',
@@ -77,8 +78,11 @@ class RationCard extends StatelessWidget {
     required this.headline,
     required this.label,
     required this.price,
-    required this.inverted,
+    this.inverted = false,
+    required this.asset,
   });
+
+  final String asset;
 
   final String headline;
 
@@ -120,7 +124,7 @@ class RationCard extends StatelessWidget {
                 topRight: Radius.circular(20),
               ),
               child: Image.asset(
-                'assets/images/cocktail.png',
+                asset,
                 fit: BoxFit.fill,
               ),
             ),
@@ -139,7 +143,7 @@ class RationCard extends StatelessWidget {
             child: Text(
               label,
               style: AppConstants.text3.copyWith(
-                color: inverted ? Colors.white : AppConstants.darkPrimary,
+                color: inverted ? Colors.white : const Color(0xFF032D3C),
               ),
               textAlign: TextAlign.center,
             ),

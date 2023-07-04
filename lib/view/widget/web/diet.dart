@@ -58,7 +58,7 @@ class DietWidget extends StatelessWidget {
             const _CategoryButton(category: 'ПП выпечка'),
             const SizedBox(width: 15),
             const _CategoryButton(category: 'Напитки'),
-            const SizedBox(width: 250),
+            const Flexible(fit: FlexFit.loose, child: SizedBox(width: 230)),
             SizedBox(
               height: 41,
               width: 395,
@@ -84,6 +84,7 @@ class DietWidget extends StatelessWidget {
                 style: AppConstants.text6.copyWith(fontSize: 13),
               ),
             ),
+            const SizedBox(width: 20),
           ],
         ),
         const SizedBox(height: 50),
@@ -143,7 +144,7 @@ class DietWidget extends StatelessWidget {
                     children: [
                       CircleButton(label: '2'),
                       CircleButton(label: '3'),
-                      CircleButton(label: '5'),
+                      CircleButton(label: '5', inverted: true),
                       CircleButton(label: '6'),
                       CircleButton(label: '7'),
                     ],
@@ -151,12 +152,15 @@ class DietWidget extends StatelessWidget {
                   const SizedBox(width: 43),
                   const Row(
                     children: [
-                      CircleButton(label: '1'),
+                      CircleButton(label: '1', inverted: true),
                       CircleButton(label: '3'),
                       CircleButton(label: '6'),
                     ],
                   ),
-                  const SizedBox(width: 80),
+                  const Flexible(
+                    fit: FlexFit.loose,
+                    child: SizedBox(width: 80),
+                  ),
                   SizedBox(
                     width: 161,
                     height: 39,
@@ -209,9 +213,11 @@ class DietWidget extends StatelessWidget {
 }
 
 class CircleButton extends StatelessWidget {
-  const CircleButton({super.key, required this.label});
+  const CircleButton({super.key, required this.label, this.inverted = false});
 
   final String label;
+
+  final bool inverted;
 
   @override
   Widget build(BuildContext context) {
@@ -225,12 +231,14 @@ class CircleButton extends StatelessWidget {
           border: Border.all(color: AppConstants.darkPrimary),
         ),
         child: Material(
-          color: Colors.white,
+          color: inverted ? AppConstants.darkPrimary : Colors.white,
           type: MaterialType.circle,
           child: Center(
             child: Text(
               label,
-              style: AppConstants.text4,
+              style: AppConstants.text4.copyWith(
+                color: inverted ? Colors.white : const Color(0xFF032D3C),
+              ),
             ),
           ),
         ),

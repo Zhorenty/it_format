@@ -43,7 +43,6 @@ class HomeView extends StatelessWidget {
                     const HowToOrderWidget(),
                     const SizedBox(height: 120),
                     const ReviewsWidget(),
-                    const SizedBox(height: 200),
                     const StockWidget(),
                     const SizedBox(height: 120),
                     const ShipPaymentWidget(),

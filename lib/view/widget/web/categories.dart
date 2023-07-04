@@ -30,26 +30,61 @@ class CategoriesWidget extends StatelessWidget {
             const SizedBox(width: 100),
           ],
         ),
-        SizedBox(
-          height: 225,
-          width: MediaQuery.sizeOf(context).width,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: const [
-              SizedBox(width: 135),
-              _CategoryStack(category: 'Салаты', count: 20),
-              SizedBox(width: 25),
-              _CategoryStack(category: 'Салаты', count: 20),
-              SizedBox(width: 25),
-              _CategoryStack(category: 'Салаты', count: 20),
-              SizedBox(width: 25),
-              _CategoryStack(category: 'Салаты', count: 20),
-              SizedBox(width: 25),
-              _CategoryStack(category: 'Салаты', count: 20),
-              SizedBox(width: 25),
-              _CategoryStack(category: 'Салаты', count: 20),
-              SizedBox(width: 25),
-              _CategoryStack(category: 'Салаты', count: 20),
+        const SizedBox(height: 50),
+        const SizedBox(
+          height: 235,
+          child: Wrap(
+            children: [
+              _CategoryStack(
+                image: 'assets/images/category1.png',
+                color: Color(0xFFFEEFEA),
+                category: 'Салаты',
+                count: 20,
+              ),
+              SizedBox(width: 15),
+              _CategoryStack(
+                image: 'assets/images/category2.png',
+                color: Color(0xFFFFF3FF),
+                category: 'Гарниры',
+                count: 220,
+              ),
+              SizedBox(width: 15),
+              _CategoryStack(
+                image: 'assets/images/category3.png',
+                color: Color(0xFFF2FCE4),
+                category: 'Супы',
+                count: 10,
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              _CategoryStack(
+                image: 'assets/images/category4.png',
+                color: Color(0xFFFEEFEA),
+                category: 'ПП выпечка',
+                count: 40,
+              ),
+              SizedBox(width: 15),
+              _CategoryStack(
+                image: 'assets/images/category5.png',
+                color: Color(0xFFECFFEC),
+                category: 'Напитки',
+                count: 23,
+              ),
+              SizedBox(width: 15),
+              _CategoryStack(
+                image: 'assets/images/category6.png',
+                color: Color(0xFFFFFAE0),
+                category: 'Морепродукты',
+                count: 3,
+              ),
+              SizedBox(width: 15),
+              _CategoryStack(
+                image: 'assets/images/category2.png',
+                color: Color(0xFFDEF9EC),
+                category: 'Соусы',
+                count: 9,
+              ),
             ],
           ),
         ),
@@ -60,10 +95,13 @@ class CategoriesWidget extends StatelessWidget {
 
 class _CategoryStack extends StatelessWidget {
   const _CategoryStack({
-    this.image = 'assets/images/primary_plate.png',
+    this.image,
     this.category = '',
     this.count = 5,
+    required this.color,
   });
+
+  final Color color;
 
   final String? image;
 
@@ -85,14 +123,14 @@ class _CategoryStack extends StatelessWidget {
               width: 160,
               height: 175,
               decoration: BoxDecoration(
-                color: const Color(0xFFFEEFEA),
-                borderRadius: BorderRadius.all(Radius.circular(7)),
+                color: color,
+                borderRadius: const BorderRadius.all(Radius.circular(7)),
                 boxShadow: [
                   BoxShadow(
                     color: AppConstants.darkPrimary.withOpacity(0.1),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
@@ -106,6 +144,7 @@ class _CategoryStack extends StatelessWidget {
                       fontSize: 15,
                     ),
                   ),
+                  const SizedBox(height: 5),
                   Text(
                     '$count элементов',
                     style: AppConstants.text1.copyWith(
@@ -120,7 +159,9 @@ class _CategoryStack extends StatelessWidget {
           ],
         ),
         Positioned(
-          child: Image.asset(height: 170, width: 140, '$image'),
+          left: 20,
+          top: 0,
+          child: Image.asset(height: 114, width: 114, '$image'),
         ),
       ],
     );

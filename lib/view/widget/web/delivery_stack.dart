@@ -162,6 +162,7 @@ class DeliveryStack extends StatelessWidget {
                               return Row(
                                 children: [
                                   DishCard(
+                                    asset: dish.image,
                                     name: dish.name,
                                     cal: dish.cal,
                                     ingridient: dish.ingredients,

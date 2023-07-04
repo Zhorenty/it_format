@@ -11,7 +11,10 @@ class DishCard extends StatelessWidget {
     required this.ingridient,
     required this.actualPrice,
     required this.oldPrice,
+    required this.asset,
   });
+
+  final String asset;
 
   ///
   final Widget? child;
@@ -46,17 +49,11 @@ class DishCard extends StatelessWidget {
         color: const Color(0xFFFAFFFA),
         child: Row(
           children: [
-            const SizedBox(width: 11),
             SizedBox(
-              height: 70,
-              width: 70,
-              child: CircleAvatar(
-                child: Image.asset(
-                  'assets/images/primary_plate.png',
-                ),
+              child: Image.asset(
+                asset,
               ),
             ),
-            const SizedBox(width: 11),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

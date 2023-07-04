@@ -16,7 +16,10 @@ class ShipPaymentWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const LeftWidget(),
-          const SizedBox(width: 110),
+          const Flexible(
+            fit: FlexFit.loose,
+            child: SizedBox(width: 110),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,12 +113,14 @@ class LeftWidget extends StatelessWidget {
         ),
         const SizedBox(height: 50),
         const _CustomCard(
+          asset: 'assets/images/payment1.png',
           width: 280,
           title: 'Быстрая доставка',
           subtitle: 'Время ожидания курьера по адресу составляет 20 минут',
         ),
         const SizedBox(height: 15),
         const _CustomCard(
+          asset: 'assets/images/payment2.png',
           width: 360,
           title: 'Оплата',
           subtitle:
@@ -123,6 +128,7 @@ class LeftWidget extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         const _CustomCard(
+          asset: 'assets/images/payment3.png',
           width: 330,
           title: 'Перенос заказа',
           subtitle:
@@ -135,7 +141,7 @@ class LeftWidget extends StatelessWidget {
 
 class _CustomCard extends StatelessWidget {
   const _CustomCard({
-    this.asset = '',
+    required this.asset,
     required this.title,
     required this.subtitle,
     required this.width,
@@ -174,11 +180,7 @@ class _CustomCard extends StatelessWidget {
         padding: const EdgeInsets.all(18.0),
         child: Row(
           children: [
-            const Icon(
-              Icons.delivery_dining,
-              size: 56,
-              color: AppConstants.darkPrimary,
-            ),
+            Image.asset(asset),
             const SizedBox(width: 25),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

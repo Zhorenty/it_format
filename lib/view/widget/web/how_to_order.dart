@@ -26,7 +26,7 @@ class HowToOrderWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 25),
-        const Text('В любое место и время!'),
+        const Text('В любое место и время!', style: AppConstants.text2),
         const SizedBox(height: 75),
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,17 +35,32 @@ class HowToOrderWidget extends StatelessWidget {
               title: 'Выбираете рацион',
               body:
                   'Все блюда разделены по типу: завтраки, салаты, горячие блюда, десерты.',
+              child: Icon(
+                Icons.event_rounded,
+                size: 130,
+                color: AppConstants.darkPrimary,
+              ),
             ),
             SizedBox(width: 25),
             _CustomCard(
               title: 'Ожидаете курьера',
               body:
                   'Доставка рационов осуществляется каждый день в удобное для вас место.',
+              child: Icon(
+                Icons.directions_car,
+                size: 130,
+                color: AppConstants.darkPrimary,
+              ),
             ),
             SizedBox(width: 25),
             _CustomCard(
               title: 'Наслаждаетесь',
               body: 'Приятного аппетита!',
+              child: Icon(
+                Icons.restaurant_rounded,
+                size: 130,
+                color: AppConstants.darkPrimary,
+              ),
             ),
           ],
         ),
@@ -55,7 +70,15 @@ class HowToOrderWidget extends StatelessWidget {
 }
 
 class _CustomCard extends StatelessWidget {
-  const _CustomCard({required this.title, required this.body});
+  const _CustomCard({
+    required this.title,
+    required this.body,
+    this.child,
+  });
+
+  // final IconData? icon;
+
+  final Widget? child;
 
   final String title;
 
@@ -85,11 +108,7 @@ class _CustomCard extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 65),
-          const Icon(
-            Icons.schedule,
-            size: 130,
-            color: AppConstants.darkPrimary,
-          ),
+          child!,
           const SizedBox(height: 65),
           Text(
             title,
