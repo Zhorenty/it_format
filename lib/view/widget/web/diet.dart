@@ -48,7 +48,10 @@ class DietWidget extends StatelessWidget {
         const SizedBox(height: 80),
         Row(
           children: [
-            const SizedBox(width: 122),
+            const Flexible(
+              fit: FlexFit.loose,
+              child: SizedBox(width: 122),
+            ),
             const _CategoryButton(category: 'Салаты'),
             const SizedBox(width: 15),
             const _CategoryButton(category: 'Гарниры'),
@@ -106,7 +109,10 @@ class DietWidget extends StatelessWidget {
               const SizedBox(height: 40),
               Row(
                 children: [
-                  const SizedBox(width: 156),
+                  const Flexible(
+                    fit: FlexFit.loose,
+                    child: SizedBox(width: 155),
+                  ),
                   Text(
                     'Кол-во каллорий',
                     style: AppConstants.text4.copyWith(fontSize: 15),
@@ -131,7 +137,10 @@ class DietWidget extends StatelessWidget {
               const SizedBox(height: 20),
               Row(
                 children: [
-                  const SizedBox(width: 122),
+                  const Flexible(
+                    fit: FlexFit.loose,
+                    child: SizedBox(width: 122),
+                  ),
                   _CustomDropDown(items: kkal, dropdownValue: kkal.first),
                   const SizedBox(width: 40),
                   _CustomDropDown(

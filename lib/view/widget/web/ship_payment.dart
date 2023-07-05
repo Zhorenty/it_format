@@ -35,6 +35,7 @@ class ShipPaymentWidget extends StatelessWidget {
                     width: 1,
                   ),
                 ),
+                child: Image.asset('assets/images/map.png'),
               ),
               const SizedBox(height: 35),
               Text(
@@ -54,19 +55,14 @@ class ShipPaymentWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(color: Colors.green, width: 1),
                 ),
-                child: const TextField(
-                  style: TextStyle(color: Colors.grey),
+                child: TextField(
+                  style: const TextStyle(color: Colors.grey),
                   decoration: InputDecoration(
                     prefixIcon: Padding(
-                      padding: EdgeInsets.only(right: 10, top: 8),
-                      child: Icon(
-                        Icons.mode_of_travel,
-                        size: 20,
-                        color: AppConstants.darkPrimary,
-                      ),
-                    ),
+                        padding: const EdgeInsets.only(right: 10, top: 8),
+                        child: Image.asset('assets/images/point.png')),
                     hintText: 'Введите адрес',
-                    hintStyle: TextStyle(color: Colors.grey),
+                    hintStyle: const TextStyle(color: Colors.grey),
                     border: InputBorder.none,
                   ),
                 ),

@@ -59,11 +59,11 @@ class _MainContent extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 18),
-              const Row(
+              Row(
                 children: [
-                  Icon(Icons.circle, size: 45, color: Colors.white),
-                  SizedBox(width: 15),
-                  Icon(Icons.circle, size: 45, color: Colors.white),
+                  Image.asset('assets/images/vk.png'),
+                  const SizedBox(width: 15),
+                  Image.asset('assets/images/tg.png'),
                 ],
               )
             ],

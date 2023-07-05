@@ -55,7 +55,10 @@ class DeliveryStack extends StatelessWidget {
                 const SizedBox(height: 180),
                 Row(
                   children: [
-                    const SizedBox(width: 130),
+                    const Flexible(
+                      fit: FlexFit.loose,
+                      child: SizedBox(width: 130),
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
